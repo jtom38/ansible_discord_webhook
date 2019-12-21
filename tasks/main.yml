@@ -8,3 +8,4 @@
       'username': "{{ discord_name }}",
       'avatar_url': "{{ discord_avatar }}"
     }
+    status_code: 204
