@@ -2,5 +2,5 @@
 discord_webhook: ''
 
 discord_message: ""
-discord_name: ""
-discord_avatar: ""
+discord_name: "Ansible"
+discord_avatar: "https://raw.githubusercontent.com/luther38/ansible_discord_webhook/master/files/ansible_logo.png"
