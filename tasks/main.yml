@@ -1,4 +1,4 @@
-- name: Send Discord Message
+- name: Send Discord Message - Basic
   uri:
     url: "{{ discord_webhook }}"
     method: 'POST'
@@ -9,3 +9,33 @@
       'avatar_url': "{{ discord_avatar }}"
     }
     status_code: 204
+  when: 
+    - discord_embed_title == ''
+    - discord_embed_content == ''
+    - discord_embed_color == ''
+
+- name: Send Discord Message - Embed
+  uri:
+    url: "{{ discord_webhook }}"
+    method: 'POST'
+    body_format: json
+    headers:
+      Content-Type: 'multipart/form-data'
+    body: {
+      'content': 'a',
+      'username': "demo",
+      'avatar_url': "{{ discord_avatar }}",
+      'embeds': [
+        {
+        'title': "work",
+        'description': "damnit",
+        'color': 7506394
+        }
+      ]
+    }
+    status_code: 204
+  when:
+    - discord_embed_title != ''
+    - discord_embed_content != ''
+    - discord_embed_color != ''
+

@@ -1,0 +1,12 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: luther38
+  description: Send Messages to Discord from Ansible.
+  #company:
+  #licence: "license "
+  min_ansible_version: 2.4
+  galaxy_tags:
+    - discord
+    - webhook
