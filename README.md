@@ -72,10 +72,9 @@ discord_color: string
         name: luther38.discord_webhook
       vars:
         discord_message: "
+          This is the first line.\n
+          Who wants to go hunt some monsters?
         "
-
-    
-
 ```
 
 ## Requirements.yml
