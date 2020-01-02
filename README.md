@@ -27,12 +27,17 @@ discord_avatar: string
 ## Example Playbook
 
 ``` yaml
-- include_role:
-    name: luther38.discord_webhook
+- name: Send Discord Message
+  hosts: localhost
   vars:
-    discord_webhook: ''
+    discord_webhook: "{{ discord_webhook_url_from_inventory }}"
     discord_name: 'Ansible Monitor'
-    discord_message: "This sends basic messages over to discord.  You can have multiple lines by using \n see?"
+
+  tasks:
+    - include_role:
+        name: luther38.discord_webhook
+      vars:
+        discord_message: "This sends basic messages over to discord.  You can have multiple lines by using \n see?"
 ```
 
 ## Requirements.yml
