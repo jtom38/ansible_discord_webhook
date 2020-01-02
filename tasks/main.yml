@@ -9,33 +9,37 @@
       'avatar_url': "{{ discord_avatar }}"
     }
     status_code: 204
-  when: 
-    - discord_embed_title == ''
-    - discord_embed_content == ''
-    - discord_embed_color == ''
+  when:
+    - discord_type == 'basic'
 
 - name: Send Discord Message - Embed
   uri:
     url: "{{ discord_webhook }}"
     method: 'POST'
     body_format: json
-    headers:
-      Content-Type: 'multipart/form-data'
     body: {
-      'content': 'a',
-      'username': "demo",
-      'avatar_url': "{{ discord_avatar }}",
-      'embeds': [
+      "username": "{{ discord_name }}",
+      "avatar_url": "{{ discord_avatar }}",
+      "embeds": [
         {
-        'title': "work",
-        'description': "damnit",
-        'color': 7506394
+        "title": "{{ discord_title }}",
+        "description": "{{ discord_message }}",
+        "color": "{{ discord_color }}"
         }
       ]
     }
     status_code: 204
   when:
-    - discord_embed_title != ''
-    - discord_embed_content != ''
-    - discord_embed_color != ''
+    - discord_type == 'fancy'
+
+#- name: Upload file to Discord
+#  uri:
+#    url: "{{ discord_webhook }}"
+#    method: 'POST'
+#    #body_format: json
+#    headers:
+#      Content-Type: multipart/form-data
+#    body: {
+#      "file1": files/ansible_logo.png
+#    }
 
