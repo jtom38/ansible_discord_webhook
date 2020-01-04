@@ -1,11 +1,9 @@
 
-discord_webhook: ''
+discord_webhook:  ''
+discord_type:     "basic"
 
-discord_message: ""
-discord_message_type: 'basic'
-discord_name: "Ansible"
-discord_avatar: "https://raw.githubusercontent.com/luther38/ansible_discord_webhook/master/files/ansible_logo.png"
-
-discord_embed_title: ''
-discord_embed_content: ''
-discord_embed_color: ''
+discord_message:  ""
+discord_name:     "Ansible"
+discord_avatar:   "https://raw.githubusercontent.com/luther38/ansible_discord_webhook/master/files/ansible_logo.png"
+discord_title:    ''
+discord_color:    '0'

@@ -39,7 +39,8 @@
 #    #body_format: json
 #    headers:
 #      Content-Type: multipart/form-data
-#    body: {
-#      "file1": files/ansible_logo.png
-#    }
+#    body: "{  {}
+#      {'file1': https://raw.githubusercontent.com/luther38/ansible_discord_webhook/master/files/ansible_logo.png } }"
+#  when:
+#    - discord_type == "upload"
 
